@@ -279,6 +279,17 @@ for i in range(n):
     print()
 
 
+n=10
+
+for i in range(n*2-1):
+    for j in range(n*2-1):
+        top=i
+        left=j
+        right=(n*2-1)-1-j
+        bottom=(n*2-1)-1-i
+        value=n-min(top,right,bottom,left)
+        print(value,end=" ")
+    print()
 
 
 
