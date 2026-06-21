@@ -17,21 +17,21 @@
 
 # Highest Occurring Element in an Array
 
-arr=['a','b','c','d','a','d','e','d','r','d']
-maxi=0
-alpha=""
-dici={}
-for i in arr:
-    if i in dici:
-        dici[i]+=1
-    else:
-        dici[i]=1
-print(dici)
-for i in dici:
-    if maxi<dici[i]:
-        maxi=max(maxi,dici[i])
-        alpha=i
-print(alpha)
+# arr=['a','b','c','d','a','d','e','d','r','d']
+# maxi=0
+# alpha=""
+# dici={}
+# for i in arr:
+#     if i in dici:
+#         dici[i]+=1
+#     else:
+#         dici[i]=1
+# print(dici)
+# for i in dici:
+#     if maxi<dici[i]:
+#         maxi=max(maxi,dici[i])
+#         alpha=i
+# print(alpha)
 
 
 
