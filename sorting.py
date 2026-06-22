@@ -35,11 +35,42 @@
 # After one pass, the largest element is placed at the end.
 # Repeat for the remaining unsorted portion.
 
-arr=[64, 25, 12, 22, 11,0]
-for i in range(len(arr)):
-    for j in range(0,len(arr)-i-1):
-        if arr[j]>arr[j+1]:
-            arr[j],arr[j+1]=arr[j+1],arr[j]
+# arr=[64, 25, 12, 22, 11,0]
+# for i in range(len(arr)):
+#     for j in range(0,len(arr)-i-1):
+#         if arr[j]>arr[j+1]:
+#             arr[j],arr[j+1]=arr[j+1],arr[j]
+# print(arr)
+
+
+
+# Insertion Sorting
+
+# Algorithm
+# Start from the second element (index = 1).
+# Store the current element as key.
+# Compare key with elements before it.
+# Shift larger elements one position to the right.
+# Insert key in its correct position.
+# Repeat until the array is sorted.
+
+arr=[5, 2, 4, 6, 1, 3]
+
+for i in range(1,len(arr)):
+    key=arr[i]
+    j=i-1
+    while j>=0 and arr[j]>key:
+        arr[j+1]=arr[j]
+        j-=1
+    arr[j+1]=key
 print(arr)
 
+
+
+
+# for i in range(len(arr)):
+#     for j in range(i+1,len(arr)):
+#         if arr[j]<arr[j-1]:
+#             arr[j],arr[j-1]=arr[j-1],arr[j]
+# print(arr)
     
