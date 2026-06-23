@@ -54,16 +54,16 @@
 # Insert key in its correct position.
 # Repeat until the array is sorted.
 
-arr=[5, 2, 4, 6, 1, 3]
+# arr=[5, 2, 4, 6, 1, 3]
 
-for i in range(1,len(arr)):
-    key=arr[i]
-    j=i-1
-    while j>=0 and arr[j]>key:
-        arr[j+1]=arr[j]
-        j-=1
-    arr[j+1]=key
-print(arr)
+# for i in range(1,len(arr)):
+#     key=arr[i]
+#     j=i-1
+#     while j>=0 and arr[j]>key:
+#         arr[j+1]=arr[j]
+#         j-=1
+#     arr[j+1]=key
+# print(arr)
 
 
 
@@ -74,3 +74,47 @@ print(arr)
 #             arr[j],arr[j-1]=arr[j-1],arr[j]
 # print(arr)
     
+
+
+
+
+# Merge sort
+# Merge Sort is a Divide and Conquer algorithm.
+
+# It works in 3 steps:
+
+# Divide the array into two halves.
+# Recursively sort both halves.
+# Merge the sorted halves into a single sorted array.
+
+
+def mergesort(arr):
+    if len(arr)<=1:
+        return arr
+    mid=len(arr)//2
+    left=mergesort(arr[:mid])
+    right=mergesort(arr[mid:])
+    return merge(left,right)
+
+def merge(left,right):
+    i=j=0
+    temp=[]
+    while i<len(left) and j<len(right):
+        if left[i]<right[j]:
+            temp.append(left[i])
+            i+=1
+        else:
+            temp.append(right[j])
+            j+=1
+    temp.extend(left[i:])
+    temp.extend(right[j:])
+    return temp
+
+
+arr=[0,7,4,3,8,6,9,0,3,1]
+
+x=mergesort(arr)
+print(x)
+
+
+
