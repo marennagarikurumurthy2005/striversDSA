@@ -160,30 +160,30 @@
 
 # quick sort
 
-def swapping(arr,low,high):
-    pivot=arr[low]
-    i=low
-    j=high
-    while i<j: 
-        while i<=high and arr[i]<=pivot :
-            i+=1
-        while arr[j]>pivot and j>low:
-            j-=1
-        if i < j:
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[low],arr[j]=arr[j],arr[low]
-    return j
+# def swapping(arr,low,high):
+#     pivot=arr[low]
+#     i=low
+#     j=high
+#     while i<j: 
+#         while i<=high and arr[i]<=pivot :
+#             i+=1
+#         while arr[j]>pivot and j>low:
+#             j-=1
+#         if i < j:
+#             arr[i], arr[j] = arr[j], arr[i]
+#     arr[low],arr[j]=arr[j],arr[low]
+#     return j
 
-def quicksort(arr,low,high):
-    if low<high:
-        pindex=swapping(arr,low,high)
-        quicksort(arr,low,pindex-1)
-        quicksort(arr,pindex+1,high)
+# def quicksort(arr,low,high):
+#     if low<high:
+#         pindex=swapping(arr,low,high)
+#         quicksort(arr,low,pindex-1)
+#         quicksort(arr,pindex+1,high)
 
-arr=[1,3,5,7,9,2,4,6,8,0]
-low=0
-high=len(arr)-1
-quicksort(arr,low,high)
-print(arr)
+# arr=[1,3,5,7,9,2,4,6,8,0]
+# low=0
+# high=len(arr)-1
+# quicksort(arr,low,high)
+# print(arr)
 
 
