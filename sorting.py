@@ -138,26 +138,52 @@
 
 # recursive insertion sort
 
-def insertion(arr,i,n):
-    if n==i:
-        return 
+# def insertion(arr,i,n):
+#     if n==i:
+#         return 
     
-    j=i
-    while j>0 and arr[j-1]>arr[j]:
-        arr[j],arr[j-1]=arr[j-1],arr[j]
+#     j=i
+#     while j>0 and arr[j-1]>arr[j]:
+#         arr[j],arr[j-1]=arr[j-1],arr[j]
 
-        j+=1
+#         j+=1
 
-    insertion(arr,i+1,n)
+#     insertion(arr,i+1,n)
 
-a=[1,4,7,3,5,8,9]
-n=len(a)
-insertion(a,0,n-1)
+# a=[1,4,7,3,5,8,9]
+# n=len(a)
+# insertion(a,0,n-1)
 
-print(a)
+# print(a)
 
     
 
+# quick sort
 
+def swapping(arr,low,high):
+    pivot=arr[low]
+    i=low
+    j=high
+    while i<j: 
+        while i<=high and arr[i]<=pivot :
+            i+=1
+        while arr[j]>pivot and j>low:
+            j-=1
+        if i < j:
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[low],arr[j]=arr[j],arr[low]
+    return j
+
+def quicksort(arr,low,high):
+    if low<high:
+        pindex=swapping(arr,low,high)
+        quicksort(arr,low,pindex-1)
+        quicksort(arr,pindex+1,high)
+
+arr=[1,3,5,7,9,2,4,6,8,0]
+low=0
+high=len(arr)-1
+quicksort(arr,low,high)
+print(arr)
 
 
