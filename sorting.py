@@ -114,20 +114,50 @@
 # x=mergesort(arr)
 # print(x)
 
-def bubblesort(arr,n):
-    if n==1:
-        return
-    is_swapped=True
-    for i in range(n-1):
-        if arr[i]>arr[i+1]:
-            arr[i],arr[i+1]=arr[i+1],arr[i]
-    if not is_swapped:
-        return
-    bubblesort(arr,n-1)
+
+
+
+
+# recursive bubble sort
+
+# def bubblesort(arr,n):
+#     if n==1:
+#         return
+#     is_swapped=True
+#     for i in range(n-1):
+#         if arr[i]>arr[i+1]:
+#             arr[i],arr[i+1]=arr[i+1],arr[i]
+#     if not is_swapped:
+#         return
+#     bubblesort(arr,n-1)
+# a=[1,4,7,3,5,8,9]
+# n=len(a)
+# bubblesort(a,n)
+# print(a)
+
+
+# recursive insertion sort
+
+def insertion(arr,i,n):
+    if n==i:
+        return 
+    
+    j=i
+    while j>0 and arr[j-1]>arr[j]:
+        arr[j],arr[j-1]=arr[j-1],arr[j]
+
+        j+=1
+
+    insertion(arr,i+1,n)
+
 a=[1,4,7,3,5,8,9]
 n=len(a)
-bubblesort(a,n)
+insertion(a,0,n-1)
+
 print(a)
+
+    
+
 
 
 
