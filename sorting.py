@@ -88,33 +88,46 @@
 # Merge the sorted halves into a single sorted array.
 
 
-def mergesort(arr):
-    if len(arr)<=1:
-        return arr
-    mid=len(arr)//2
-    left=mergesort(arr[:mid])
-    right=mergesort(arr[mid:])
-    return merge(left,right)
+# def mergesort(arr):
+#     if len(arr)<=1:
+#         return arr
+#     mid=len(arr)//2
+#     left=mergesort(arr[:mid])
+#     right=mergesort(arr[mid:])
+#     return merge(left,right)
 
-def merge(left,right):
-    i=j=0
-    temp=[]
-    while i<len(left) and j<len(right):
-        if left[i]<right[j]:
-            temp.append(left[i])
-            i+=1
-        else:
-            temp.append(right[j])
-            j+=1
-    temp.extend(left[i:])
-    temp.extend(right[j:])
-    return temp
+# def merge(left,right):
+#     i=j=0
+#     temp=[]
+#     while i<len(left) and j<len(right):
+#         if left[i]<right[j]:
+#             temp.append(left[i])
+#             i+=1
+#         else:
+#             temp.append(right[j])
+#             j+=1
+#     temp.extend(left[i:])
+#     temp.extend(right[j:])
+#     return temp
 
+# arr=[0,7,4,3,8,6,9,0,3,1]
+# x=mergesort(arr)
+# print(x)
 
-arr=[0,7,4,3,8,6,9,0,3,1]
-
-x=mergesort(arr)
-print(x)
+def bubblesort(arr,n):
+    if n==1:
+        return
+    is_swapped=True
+    for i in range(n-1):
+        if arr[i]>arr[i+1]:
+            arr[i],arr[i+1]=arr[i+1],arr[i]
+    if not is_swapped:
+        return
+    bubblesort(arr,n-1)
+a=[1,4,7,3,5,8,9]
+n=len(a)
+bubblesort(a,n)
+print(a)
 
 
 
