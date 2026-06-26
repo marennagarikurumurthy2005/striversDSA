@@ -103,7 +103,7 @@
 
 # rotating elements ----> Left Rotate Array by One
 
-nums = [-1, 0, 3, 6]
+# nums = [-1, 0, 3, 6]
 # number_of_rotations=1
 # first_list=nums[:number_of_rotations]
 # secound_list=nums[number_of_rotations:]
@@ -116,11 +116,11 @@ nums = [-1, 0, 3, 6]
 # dummy.append(nums[0])
 # print(dummy)
 
-f=nums[0]
-for i in range(1,len(nums)):
-    nums[i-1]=nums[i]
-nums[len(nums)-1]=f
-print(nums)
+# f=nums[0]
+# for i in range(1,len(nums)):
+#     nums[i-1]=nums[i]
+# nums[len(nums)-1]=f
+# print(nums)
 
 
 
@@ -142,4 +142,11 @@ print(nums)
 # i=0
 # j=len(input)
 
-    
+
+nums = [1, 2, 3, 4, 5, 6, 7]
+n=8
+if n>len(nums):
+    n//=len(nums)
+arr1=nums[n:]
+arr1.extend(nums[:n])
+print(arr1)
