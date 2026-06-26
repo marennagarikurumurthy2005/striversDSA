@@ -143,10 +143,29 @@
 # j=len(input)
 
 
-nums = [1, 2, 3, 4, 5, 6, 7]
-n=8
-if n>len(nums):
-    n//=len(nums)
-arr1=nums[n:]
-arr1.extend(nums[:n])
-print(arr1)
+# nums = [1, 2, 3, 4, 5, 6, 7]
+# n=8
+# if n>len(nums):
+#     n//=len(nums)
+# arr1=nums[n:]
+# arr1.extend(nums[:n])
+# print(arr1)
+
+# moving zeros to the end
+nums=[1, 0, 2, 3, 2, 0, 0, 4, 5, 1]
+i=0
+j=1
+while j<len(nums):
+    if nums[i]==0 and nums[j]!=0:
+        nums[i],nums[j]=nums[j],nums[i]
+        i+=1
+        j+=1
+        print(j)
+    elif nums[i]==0 and nums[j]==0:
+        j+=1
+        print(j)
+    else:
+        i+=1
+        j+=1
+print(nums)  
+        
