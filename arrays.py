@@ -209,10 +209,52 @@
 
 # finding the missisng number 
 
-nums=[8, 2, 4, 5, 3, 7, 1,6,10]
-total_num=((len(nums)+1)*(len(nums)+2))/2
-nums_sum=0
-for i in nums:
-    nums_sum+=i
-print(int(total_num-nums_sum))
+# nums=[8, 2, 4, 5, 3, 7, 1,6,10]
+# total_num=((len(nums)+1)*(len(nums)+2))/2
+# nums_sum=0
+# for i in nums:
+#     nums_sum+=i
+# print(int(total_num-nums_sum))
+
+
+# nums=[1, 1, 0, 1, 1, 1,0,1,1,0,1,1,1,1]
+# count=max_count=0
+# for i in range(len(nums)):
+#     if nums[i]==1:
+#         count+=1
+#         max_count=max(max_count,count)
+#     else:
+#         count=0
+# print(max_count)
+
+
+# arr = [4, 1, 2, 1, 2]
+# dici={}
+# for i in arr:
+#     if i in dici:
+#         dici[i]+=1
+#     else:
+#         dici[i]=1
+# print(dici)
+
+# for i in dici:
+#     if dici[i]==1:
+#         print(i)
+#         break
+
+
+# xor=0
+# for i in arr:
+#     xor^=i
+# print(xor)
+
+nums = [10, 5, 2, 7, 1, 9]
+k = 15
+max_length=0
+for i in range(len(nums)):
+    for j in range(i+1,len(nums)+1):
+        if sum(nums[i:j])==15 and max_length<(j-i):
+            print(nums[i:j])
+            max_length=j-i
+print(max_length)
 
