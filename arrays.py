@@ -181,27 +181,38 @@
 # union of 2 arrays
 
 
-arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-arr2 = [2, 3, 4, 4, 5, 11, 12]
-union_arr=[]
-i=j=0
+# arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# arr2 = [2, 3, 4, 4, 5, 11, 12]
+# union_arr=[]
+# i=j=0
 
-while i<len(arr1) and j<len(arr2):
-    if arr1[i]==arr1[j]:
-        union_arr.append(arr1[i])
-        i+=1
-        j+=1
-    elif arr1[i]!=arr2[j] and arr1[i]<arr2[j]:
-        union_arr.append(arr1[i])
-        i+=1
-    elif arr1[i]!=arr2[j] and arr1[i]>arr2[j]:
-        union_arr.append(arr2[j])
-    # else:
-    #     pass
-if i<len(arr1):
-    union_arr.extend(arr1[i:])
-if j<len(arr2):
-    union_arr.extend(arr2[j:])
+# while i<len(arr1) and j<len(arr2):
+#     if arr1[i]==arr1[j]:
+#         union_arr.append(arr1[i])
+#         i+=1
+#         j+=1
+#     elif arr1[i]!=arr2[j] and arr1[i]<arr2[j]:
+#         union_arr.append(arr1[i])
+#         i+=1
+#     elif arr1[i]!=arr2[j] and arr1[i]>arr2[j]:
+#         union_arr.append(arr2[j])
+#     # else:
+#     #     pass
+# if i<len(arr1):
+#     union_arr.extend(arr1[i:])
+# if j<len(arr2):
+#     union_arr.extend(arr2[j:])
 
-print(union_arr)
+# print(union_arr)
         
+
+
+# finding the missisng number 
+
+nums=[8, 2, 4, 5, 3, 7, 1,6,10]
+total_num=((len(nums)+1)*(len(nums)+2))/2
+nums_sum=0
+for i in nums:
+    nums_sum+=i
+print(int(total_num-nums_sum))
+
