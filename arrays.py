@@ -152,20 +152,56 @@
 # print(arr1)
 
 # moving zeros to the end
-nums=[1, 0, 2, 3, 2, 0, 0, 4, 5, 1]
-i=0
-j=1
-while j<len(nums):
-    if nums[i]==0 and nums[j]!=0:
-        nums[i],nums[j]=nums[j],nums[i]
+# nums=[1, 0, 2, 3, 2, 0, 0, 4, 5, 1]
+# i=0
+# j=1
+# while j<len(nums):
+#     if nums[i]==0 and nums[j]!=0:
+#         nums[i],nums[j]=nums[j],nums[i]
+#         i+=1
+#         j+=1
+#         print(j)
+#     elif nums[i]==0 and nums[j]==0:
+#         j+=1
+#         print(j)
+#     else:
+#         i+=1
+#         j+=1
+# print(nums)  
+
+# linear search
+
+# target=5
+# arr=[1, 2, 3, 4, 5]
+# for i in range(len(arr)):
+#     if arr[i]==target:
+#         print(i)
+#         break
+
+# union of 2 arrays
+
+
+arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr2 = [2, 3, 4, 4, 5, 11, 12]
+union_arr=[]
+i=j=0
+
+while i<len(arr1) and j<len(arr2):
+    if arr1[i]==arr1[j]:
+        union_arr.append(arr1[i])
         i+=1
         j+=1
-        print(j)
-    elif nums[i]==0 and nums[j]==0:
-        j+=1
-        print(j)
-    else:
+    elif arr1[i]!=arr2[j] and arr1[i]<arr2[j]:
+        union_arr.append(arr1[i])
         i+=1
-        j+=1
-print(nums)  
+    elif arr1[i]!=arr2[j] and arr1[i]>arr2[j]:
+        union_arr.append(arr2[j])
+    # else:
+    #     pass
+if i<len(arr1):
+    union_arr.extend(arr1[i:])
+if j<len(arr2):
+    union_arr.extend(arr2[j:])
+
+print(union_arr)
         
