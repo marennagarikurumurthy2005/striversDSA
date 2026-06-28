@@ -248,13 +248,52 @@
 #     xor^=i
 # print(xor)
 
-nums = [10, 5, 2, 7, 1, 9]
-k = 15
-max_length=0
+# nums = [10, 5, 2, 7, 1, 9]
+# k = 15
+# max_length=0
+# for i in range(len(nums)):
+#     for j in range(i+1,len(nums)+1):
+#         if sum(nums[i:j])==15 and max_length<(j-i):
+#             print(nums[i:j])
+#             max_length=j-i
+# print(max_length)
+
+
+
+
+
+
+# what is sap?
+
+
+
+# for i in range(10):
+#     pass
+# print(i)
+
+# what is the value of i?
+
+# for i in range(1,31):
+#     print(f'{i}->:')
+
+# M/s. Mantri Developers Pvt. Ltd., IT/ITES SEZ, Nanakramguda Village, Serilingampally Mandal, Ranga Reddy District, Hyderabad, Telangana, India, 500008
+
+
+
+
+
+nums= [10, 5, 2, 7, 1, 9]
+n=15
+maxi=0
+
 for i in range(len(nums)):
-    for j in range(i+1,len(nums)+1):
-        if sum(nums[i:j])==15 and max_length<(j-i):
-            print(nums[i:j])
-            max_length=j-i
-print(max_length)
+    s=0
+    for j in range(i,len(nums)):
+        s+=nums[j]
+        if s==n:
+            maxi=max(maxi,j-i+1)
+print(maxi)
+
+
+
 
