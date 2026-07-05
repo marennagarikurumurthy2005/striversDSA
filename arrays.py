@@ -293,29 +293,46 @@
 # print(maxi)
 
 
+# arr=[1,2,3,4,5,6,7,8,5,1]
+# i=0
+# j=i-1
+# k=i+1
+# element=arr[0]
+# while i<len(arr):
+#     if i==0:
+#         if arr[i]<arr[k]:
+#             element=max(element,arr[i],arr[k])
+#     elif i==len(arr)-1:
+#         element=max(element,arr[i],arr[j])
+#     else:
+#         element=max(element,arr[i],arr[j],arr[k])
+#     i+=1
+#     j+=1
+#     k+=1
+# print(element)
+
+# if element:
+#     print("True")
 
 
+#sqrt of a num
+num=36
+print(num**0.5)
 
+if num<2:
+    print(num)
+else:
+    left=0
+    right=num//2
+    ans=0
+    while left<=right:
+        mid=(left+right)//2
+        if mid*mid<=num:
+            ans=mid
+            left=mid+1
+        else:
+            right=mid-1
+    print(ans)
 
-arr=[1,2,3,4,5,6,7,8,5,1]
-i=0
-j=i-1
-k=i+1
-element=arr[0]
-while i<len(arr):
-    if i==0:
-        if arr[i]<arr[k]:
-            element=max(element,arr[i],arr[k])
-    elif i==len(arr)-1:
-        element=max(element,arr[i],arr[j])
-    else:
-        element=max(element,arr[i],arr[j],arr[k])
-    i+=1
-    j+=1
-    k+=1
-print(element)
-
-if element:
-    print("True")
 
 
