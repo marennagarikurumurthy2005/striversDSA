@@ -316,23 +316,58 @@
 
 
 #sqrt of a num
-num=36
-print(num**0.5)
+# num=36
+# print(num**0.5)
 
-if num<2:
-    print(num)
-else:
-    left=0
-    right=num//2
-    ans=0
-    while left<=right:
-        mid=(left+right)//2
-        if mid*mid<=num:
-            ans=mid
-            left=mid+1
-        else:
-            right=mid-1
-    print(ans)
+# if num<2:
+#     print(num)
+# else:
+#     left=0
+#     right=num//2
+#     ans=0
+#     while left<=right:
+#         mid=(left+right)//2
+#         if mid*mid<=num:
+#             ans=mid
+#             left=mid+1
+#         else:
+#             right=mid-1
+#     print(ans)
+
+# n=3
+# m=27
+# x=n
+# count=1
+# while n<m:
+#     n=n*x
+#     count+=1
+# if n==m:
+#     print(count)
+# else:
+#     print("-1")
+
+
+arr=[0,1,0,1,2,1,0,2,0,2,1]
+
+low=0
+mid=0
+high=len(arr)-1
+
+while mid<=high:
+    if arr[mid]==0:
+        arr[low],arr[mid]=arr[mid],arr[low]
+        low+=1
+        mid+=1
+    elif arr[mid]==1:
+        mid+=1
+    else:
+        arr[mid],arr[high]=arr[high],arr[mid]
+        high-=1
+print(arr)
+
+
+    
+
 
 
 

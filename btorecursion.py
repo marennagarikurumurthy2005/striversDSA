@@ -74,15 +74,15 @@
 
 # Fibonacci Number
 
-def recursion(num,a=0,b=1,c=1): # 0 1 1 2 3 5 8 13 21 
-    if num<3:
-        return c
-    tem=b
-    b=a+b
-    c=b
-    a=tem
-    return recursion(num-1,a,b,c)
+# def recursion(num,a=0,b=1,c=1): # 0 1 1 2 3 5 8 13 21 
+#     if num<3:
+#         return c
+#     tem=b
+#     b=a+b
+#     c=b
+#     a=tem
+#     return recursion(num-1,a,b,c)
 
-ip=int(input())
-res=recursion(ip)
-print(res)
+# ip=int(input())
+# res=recursion(ip)
+# print(res)
