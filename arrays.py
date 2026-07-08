@@ -347,23 +347,75 @@
 #     print("-1")
 
 
-arr=[0,1,0,1,2,1,0,2,0,2,1]
+# arr=[0,1,0,1,2,1,0,2,0,2,1]
 
-low=0
-mid=0
-high=len(arr)-1
+# low=0
+# mid=0
+# high=len(arr)-1
 
-while mid<=high:
-    if arr[mid]==0:
-        arr[low],arr[mid]=arr[mid],arr[low]
-        low+=1
-        mid+=1
-    elif arr[mid]==1:
-        mid+=1
+# while mid<=high:
+#     if arr[mid]==0:
+#         arr[low],arr[mid]=arr[mid],arr[low]
+#         low+=1
+#         mid+=1
+#     elif arr[mid]==1:
+#         mid+=1
+#     else:
+#         arr[mid],arr[high]=arr[high],arr[mid]
+#         high-=1
+    
+# print(arr)
+
+
+# nums=[-1]
+# # print(sum(arr))
+
+# maxi=
+# for i in range(len(nums)+1):
+#     for j in range(i,len(nums)):
+#         print(nums[i:j+1])
+#         s=sum(nums[i:j+1])
+        
+#         if s>maxi:
+#             maxi=s
+# print(maxi)
+
+# i=0
+# arr=['floot','floar','flooke']
+# ans=""
+# while i<len(arr[0]):
+#     if arr[0][i]==arr[1][i]==arr[2][i]:
+#         ans+=arr[0][i]
+#     else:
+#         break
+#     i+=1
+# print(ans)
+
+input = 'IVMC'
+romanMap = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+                'C': 100, 'D': 500, 'M': 1000}
+i=0
+ans=0
+
+while i<len(input)-1:
+    s=0
+    data=input[i]
+    next_data=input[i+1]
+    if romanMap[data]>=romanMap[next_data]:
+        s=romanMap[data]+romanMap[next_data]
+        i+=1
     else:
-        arr[mid],arr[high]=arr[high],arr[mid]
-        high-=1
-print(arr)
+        s=romanMap[data]-romanMap[next_data]
+        i+=2
+    ans+=s
+print(ans)
+
+        
+        
+        
+        
+
+
 
 
     
