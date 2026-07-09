@@ -391,24 +391,24 @@
 #     i+=1
 # print(ans)
 
-input = 'IVMC'
-romanMap = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                'C': 100, 'D': 500, 'M': 1000}
-i=0
-ans=0
+# input = 'IVMC'
+# romanMap = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+#                 'C': 100, 'D': 500, 'M': 1000}
+# i=0
+# ans=0
 
-while i<len(input)-1:
-    s=0
-    data=input[i]
-    next_data=input[i+1]
-    if romanMap[data]>=romanMap[next_data]:
-        s=romanMap[data]+romanMap[next_data]
-        i+=1
-    else:
-        s=romanMap[data]-romanMap[next_data]
-        i+=2
-    ans+=s
-print(ans)
+# while i<len(input)-1:
+#     s=0
+#     data=input[i]
+#     next_data=input[i+1]
+#     if romanMap[data]>=romanMap[next_data]:
+#         s=romanMap[data]+romanMap[next_data]
+#         i+=1
+#     else:
+#         s=romanMap[data]-romanMap[next_data]
+#         i+=2
+#     ans+=s
+# print(ans)
 
 
 #  kadanes algorithm
@@ -423,8 +423,25 @@ print(ans)
 #             if sum<=0:
 #                 sum=0
 #             i+=1
-        
-        
+
+
+nums = [-2,1,-3,4,-1,2,1,-6,9]
+maxi=float('-inf')
+i=0
+sum=0
+start=-1
+end=-1
+while i<len(nums):
+    sum+=nums[i]
+    if sum>maxi:
+        maxi=sum
+        end=i+1
+    if sum<=0:
+            sum=0
+            start=i+1
+    i+=1
+print(maxi)  
+print(nums[start:end])  
         
 
 
