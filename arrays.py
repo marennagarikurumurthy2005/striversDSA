@@ -410,7 +410,19 @@ while i<len(input)-1:
     ans+=s
 print(ans)
 
-        
+
+#  kadanes algorithm
+
+# maxi=float('-inf')
+#         i=0
+#         sum=0
+#         while i<len(nums):
+#             sum+=nums[i]
+#             if sum>maxi:
+#                 maxi=sum
+#             if sum<=0:
+#                 sum=0
+#             i+=1
         
         
         
