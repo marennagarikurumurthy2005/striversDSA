@@ -453,19 +453,48 @@
 # print(maxi)  
 # print(nums[start:end])  
 
-nums = [1,2,3]
-def func():
-    ans=[nums[0],]
-    ans.extend(nums[len(nums)-1:0:-1])
-    return ans
-x=func()
-print(x)
+# nums = [1,2,3]
+# def func():
+#     ans=[nums[0],]
+#     ans.extend(nums[len(nums)-1:0:-1])
+#     return ans
+# x=func()
+# print(x)
     
 
 # def recurrsion(nums,ans):
 #     if len(nums)==1:
 #         return ans
     
+
+# round robbin load balancer
+servers = ["Server-1", "Server-2", "Server-3"]
+
+requests = [
+    "User1",
+    "User2",
+    "User3",
+    "User4",
+    "User5",
+    "User6",
+]
+
+index=0
+for r in requests:
+    print(r,servers[index])
+    if index==len(servers)-1:
+        index=0
+    else:
+        index+=1
+
+    
+    
+    # while index<len(servers):
+    #     if index==len(servers):
+    #         index=0
+    #     print(servers[index]+"->"+r)
+    #     index+=1
+
     
 
 
