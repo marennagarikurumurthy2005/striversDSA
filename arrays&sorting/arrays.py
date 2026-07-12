@@ -497,20 +497,38 @@
 
 # aasign_job to low busy
 
-request = True
+# request = True
 
-servers = {
-    "Server-1": 5,
-    "Server-2": 2,
-    "Server-3": 7
-}
+# servers = {
+#     "Server-1": 5,
+#     "Server-2": 2,
+#     "Server-3": 7
+# }
 
-new_request = min(servers,key=servers.get)
-# print(new_request)
+# new_request = min(servers,key=servers.get)
+# # print(new_request)
 
-if request:
-    servers[new_request]+=1
-print(servers)
+# if request:
+#     servers[new_request]+=1
+# print(servers)
+
+nums = [1,3,2]
+# Output: [2,1,3]
+
+index=-1
+for i in range(len(nums)-2,-1,-1):
+    if nums[i]<nums[i+1]:
+        index=i
+        break
+if index==-1:
+    print(reversed(nums))
+else:
+    for j in range(len(nums)-1,index,-1):
+        if nums[index]<nums[j]:
+            nums[index],nums[j]=nums[j],nums[index]
+    
+print(nums)
+   
     
 
 
