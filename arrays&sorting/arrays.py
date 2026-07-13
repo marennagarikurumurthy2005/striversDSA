@@ -552,29 +552,109 @@
 
 
 # longest consective sequence in brute force
-nums = [100,4,200,1,3,2]
-ans=[]
-for i in range(len(nums)):
-    longest_sequence=set()
-    current=nums[i]
-    longest_sequence.add(current)
-    while True:
-        if current+1 in nums:
-            current+=1
-            longest_sequence.add(current)
-        else:
-            break
-    if len(ans)<len(longest_sequence):
-        ans=list(longest_sequence)
-print(ans)
+# nums = [100,4,200,1,3,2]
+# ans=[]
+# for i in range(len(nums)):
+#     longest_sequence=set()
+#     current=nums[i]
+#     longest_sequence.add(current)
+#     while True:
+#         if current+1 in nums:
+#             current+=1
+#             longest_sequence.add(current)
+#         else:
+#             break
+#     if len(ans)<len(longest_sequence):
+#         ans=list(longest_sequence)
+# print(ans)
     
 
+# matrix = [[1,1,1],[1,0,1],[1,1,1]]
+# # Output: [[1,0,1],[0,0,0],[1,0,1]]
 
-        
+# def mC(i):
+#     for j in range(len(matrix[i])):
+#         if matrix[i][j]!=0:
+#             matrix[i][j]=-1
+# def mR(j):
+#     for i in range(len(matrix[0])):
+#         if matrix[i][j]!=0:
+#             matrix[i][j]=-1
+
+# def mR(col):
+#     for row in range(len(matrix)):
+#         if matrix[row][col] != 0:
+#             matrix[row][col] = -1
+
+# for i in range(len(matrix)):
+#     for j in range(len(matrix[0])):
+#         if matrix[i][j]==0:
+#             mC(i)
+#             mR(j)
+# for i in range(len(matrix)):
+#     for j in range(len(matrix[0])):
+#         if matrix[i][j]==-1:
+#             matrix[i][j]=0
+# print(matrix)
+
+# def mC(i):
+#             for j in range(len(matrix[i])):
+#                 if matrix[i][j]!=0:
+#                     matrix[i][j]=float('-inf')
+#         def mR(j):
+#             for i in range(len(matrix)):
+#                 if matrix[i][j]!=0:
+#                     matrix[i][j]=float('-inf')
+#         count=0
+#         for i in range(len(matrix)):
+#             for j in range(len(matrix[0])):
+#                 if matrix[i][j]==0:
+#                     count+=1
+#                     mC(i)
+#                     mR(j)
+#         if count>0:
+#             for i in range(len(matrix)):
+#                 for j in range(len(matrix[0])):
+#                     if matrix[i][j]==float('-inf'):
+#                         matrix[i][j]=0
+
+#         return matrix
+# from copy import deepcopy
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# Output: [[7,4,1],[8,5,2],[9,6,3]] rotate by 90 deg
+# new_matrix=deepcopy(matrix)
+# for i in range(len(matrix)):
+#     for k in range(len(matrix[0])):
+#         print(k,len(matrix[0])-i-1)
+#         new_matrix[k][len(matrix[0])-i-1]=matrix[i][k]
+# print(new_matrix)
+
+# for i in range(len(matrix)):
+#     for j in range(i+1,len(matrix)):
+#         print(matrix[i][j])
 
 
-
-
+left=top=0
+bottom=len(matrix)-1
+right=len(matrix[0])-1
+new=[]
+while left<=right and top<=bottom:
+    for i in range(left,right+1):
+        new.append(matrix[top][i])
+    top+=1
+    for i in range(top,bottom+1):
+        new.append(matrix[i][right])
+    right-=1
+    if top<=bottom:
+        for i in range(right,left-1,-1):
+            new.append(matrix[bottom][i])
+        bottom-=1
+    
+    if left<=right:
+        for i in range(bottom,top-1,-1):
+            new.append(matrix[i][left])
+        left+=1
+print(new)
 
 
 
