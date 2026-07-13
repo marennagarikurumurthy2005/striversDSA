@@ -512,24 +512,68 @@
 #     servers[new_request]+=1
 # print(servers)
 
-nums = [1,3,2]
-# Output: [2,1,3]
+# nums = [1,3,2]
+# # Output: [2,1,3]
 
-index=-1
-for i in range(len(nums)-2,-1,-1):
-    if nums[i]<nums[i+1]:
-        index=i
-        break
-if index==-1:
-    print(reversed(nums))
-else:
-    for j in range(len(nums)-1,index,-1):
-        if nums[index]<nums[j]:
-            nums[index],nums[j]=nums[j],nums[index]
+# index=-1
+# for i in range(len(nums)-2,-1,-1):
+#     if nums[i]<nums[i+1]:
+#         index=i
+#         break
+# if index==-1:
+#     print(reversed(nums))
+# else:
+#     for j in range(len(nums)-1,index,-1):
+#         if nums[index]<nums[j]:
+#             nums[index],nums[j]=nums[j],nums[index]
     
-print(nums)
+# print(nums)
    
     
+# nums = [1, 2, 5, 3, 1, 2]
+# Output: [5, 3, 2]
+# leaders=[]
+# for i in range(len(nums)):
+#     for j in range(i+1,len(nums)):
+#         if nums[j]>nums[i]:
+#             break
+#     else:
+#         leaders.append(nums[i])
+# print(leaders)
+# i=len(nums)-2
+# maximum=nums[len(nums)-1]
+# while i>=0:
+#     if nums[i]<maximum:
+#         del nums[i]  
+#     else:
+#         maximum=nums[i]
+#         i-=1
+# print(nums)
+
+
+# longest consective sequence in brute force
+nums = [100,4,200,1,3,2]
+ans=[]
+for i in range(len(nums)):
+    longest_sequence=set()
+    current=nums[i]
+    longest_sequence.add(current)
+    while True:
+        if current+1 in nums:
+            current+=1
+            longest_sequence.add(current)
+        else:
+            break
+    if len(ans)<len(longest_sequence):
+        ans=list(longest_sequence)
+print(ans)
+    
+
+
+        
+
+
+
 
 
 
