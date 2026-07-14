@@ -634,31 +634,63 @@ matrix = [[1,2,3],[4,5,6],[7,8,9]]
 #         print(matrix[i][j])
 
 
-left=top=0
-bottom=len(matrix)-1
-right=len(matrix[0])-1
-new=[]
-while left<=right and top<=bottom:
-    for i in range(left,right+1):
-        new.append(matrix[top][i])
-    top+=1
-    for i in range(top,bottom+1):
-        new.append(matrix[i][right])
-    right-=1
-    if top<=bottom:
-        for i in range(right,left-1,-1):
-            new.append(matrix[bottom][i])
-        bottom-=1
+# left=top=0
+# bottom=len(matrix)-1
+# right=len(matrix[0])-1
+# new=[]
+# while left<=right and top<=bottom:
+#     for i in range(left,right+1):
+#         new.append(matrix[top][i])
+#     top+=1
+#     for i in range(top,bottom+1):
+#         new.append(matrix[i][right])
+#     right-=1
+#     if top<=bottom:
+#         for i in range(right,left-1,-1):
+#             new.append(matrix[bottom][i])
+#         bottom-=1
     
-    if left<=right:
-        for i in range(bottom,top-1,-1):
-            new.append(matrix[i][left])
-        left+=1
-print(new)
+#     if left<=right:
+#         for i in range(bottom,top-1,-1):
+#             new.append(matrix[i][left])
+#         left+=1
+# print(new)
+
+numRows = 5
+# Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+new_list=[]
+for i in range(1,numRows+1):
+    ans=1
+    new_list.append([ans])
+    for j in range(1,i):
+        ans=ans*(i-j)
+        ans=int(ans/j)
+        new_list[i-1].append(ans)
+print(new_list)
+    
 
 
 
-        
+
+# def function(n,r):
+#     res=1
+#     for i in range(r):
+#         res=(n-i)*res
+#         res=(res)/(r-i)
+#     return int(res)
+
+# new_list=[]
+# for i in range(numRows+1):
+#     lists=[]
+#     for j in range(i):
+#         net=function(i-1,j)
+#         lists.append(net)
+#         # print(net,end=" ")
+#     # print()
+#     if len(lists)!=0:
+#         new_list.append(lists)
+# print(new_list)     
 
 
 
