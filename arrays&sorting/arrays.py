@@ -656,23 +656,19 @@ matrix = [[1,2,3],[4,5,6],[7,8,9]]
 #         left+=1
 # print(new)
 
-numRows = 5
+# numRows = 5
 # Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 
-new_list=[]
-for i in range(1,numRows+1):
-    ans=1
-    new_list.append([ans])
-    for j in range(1,i):
-        ans=ans*(i-j)
-        ans=int(ans/j)
-        new_list[i-1].append(ans)
-print(new_list)
+# new_list=[]
+# for i in range(1,numRows+1):
+#     ans=1
+#     new_list.append([ans])
+#     for j in range(1,i):
+#         ans=ans*(i-j)
+#         ans=int(ans/j)
+#         new_list[i-1].append(ans)
+# print(new_list)
     
-
-
-
-
 # def function(n,r):
 #     res=1
 #     for i in range(r):
@@ -692,6 +688,48 @@ print(new_list)
 #         new_list.append(lists)
 # print(new_list)     
 
+values = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+input='IX'
+prev=0
+total=0
+for i in reversed(input):
+    current=values[i]
+    if current<prev:
+        total-=current
+    else:
+        total+=current
+    prev=current
+print(total)
+
+def intToRoman(num):
+    values = [
+        1000, 900, 500, 400,
+        100, 90, 50, 40,
+        10, 9, 5, 4, 1
+    ]
+
+    romans = [
+        "M", "CM", "D", "CD",
+        "C", "XC", "L", "XL",
+        "X", "IX", "V", "IV", "I"
+    ]
+
+    ans = ""
+
+    for i in range(len(values)):
+        while num >= values[i]:
+            ans += romans[i]
+            num -= values[i]
+
+    return ans
 
 
 
