@@ -686,52 +686,66 @@ matrix = [[1,2,3],[4,5,6],[7,8,9]]
 #     # print()
 #     if len(lists)!=0:
 #         new_list.append(lists)
-# print(new_list)     
+# print(new_list) 
+# 
+# 
+# set1={0,-1,2}
+# set2={2,-1,0}
+# if set1==set2:
+#     print("yes")    
 
-values = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-input='IX'
-prev=0
-total=0
-for i in reversed(input):
-    current=values[i]
-    if current<prev:
-        total-=current
-    else:
-        total+=current
-    prev=current
-print(total)
+# values = {
+#         'I': 1,
+#         'V': 5,
+#         'X': 10,
+#         'L': 50,
+#         'C': 100,
+#         'D': 500,
+#         'M': 1000
+#     }
+# input='IX'
+# prev=0
+# total=0
+# for i in reversed(input):
+#     current=values[i]
+#     if current<prev:
+#         total-=current
+#     else:
+#         total+=current
+#     prev=current
+# print(total)
 
-def intToRoman(num):
-    values = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4, 1
-    ]
+# def intToRoman(num):
+#     values = [
+#         1000, 900, 500, 400,
+#         100, 90, 50, 40,
+#         10, 9, 5, 4, 1
+#     ]
 
-    romans = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV", "I"
-    ]
+#     romans = [
+#         "M", "CM", "D", "CD",
+#         "C", "XC", "L", "XL",
+#         "X", "IX", "V", "IV", "I"
+#     ]
 
-    ans = ""
+#     ans = ""
 
-    for i in range(len(values)):
-        while num >= values[i]:
-            ans += romans[i]
-            num -= values[i]
+#     for i in range(len(values)):
+#         while num >= values[i]:
+#             ans += romans[i]
+#             num -= values[i]
 
-    return ans
+#     return ans
 
-
+maxi=0
+nums=[15, -2, 2, -8, 1, 7, 10, 23]
+for i in range(len(nums)):
+    sum=0
+    for j in range(i,len(nums)):
+        sum+=nums[j]
+        if sum==0:
+            maxi=max(maxi,j-i)
+print(maxi)
 
     
 
