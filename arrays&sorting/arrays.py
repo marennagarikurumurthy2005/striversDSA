@@ -737,15 +737,35 @@ matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
 #     return ans
 
-maxi=0
-nums=[15, -2, 2, -8, 1, 7, 10, 23]
-for i in range(len(nums)):
-    sum=0
-    for j in range(i,len(nums)):
-        sum+=nums[j]
-        if sum==0:
-            maxi=max(maxi,j-i)
-print(maxi)
+# maxi=0
+# nums=[15, -2, 2, -8, 1, 7, 10, 23]
+# for i in range(len(nums)):
+#     sum=0
+#     for j in range(i,len(nums)):
+#         sum+=nums[j]
+#         if sum==0:
+#             maxi=max(maxi,j-i)
+# print(maxi)
+
+nums=[5, 6, 7, 8, 9]
+k = 5
+xor=0
+count=0
+hashmap={}
+for i in nums:
+    if xor in hashmap:
+        hashmap[xor]+=1
+    else:
+        hashmap[xor]=1
+    xor=xor^i
+    x=xor^k
+    if x in hashmap:
+        count+=hashmap[x]
+print(count)
+    
+
+
+
 
     
 
