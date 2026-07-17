@@ -747,21 +747,21 @@ matrix = [[1,2,3],[4,5,6],[7,8,9]]
 #             maxi=max(maxi,j-i)
 # print(maxi)
 
-nums=[5, 6, 7, 8, 9]
-k = 5
-xor=0
-count=0
-hashmap={}
-for i in nums:
-    if xor in hashmap:
-        hashmap[xor]+=1
-    else:
-        hashmap[xor]=1
-    xor=xor^i
-    x=xor^k
-    if x in hashmap:
-        count+=hashmap[x]
-print(count)
+# nums=[5, 6, 7, 8, 9]
+# k = 5
+# xor=0
+# count=0
+# hashmap={}
+# for i in nums:
+#     if xor in hashmap:
+#         hashmap[xor]+=1
+#     else:
+#         hashmap[xor]=1
+#     xor=xor^i
+#     x=xor^k
+#     if x in hashmap:
+#         count+=hashmap[x]
+# print(count)
     
 
 
