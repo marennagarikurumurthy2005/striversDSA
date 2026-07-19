@@ -55,29 +55,42 @@
 #         low=mid+1
 # print(low)
 
-bloomDay = [1,10,3,10,2]
-m = 3
-k = 1
-# Output: 3
+# bloomDay = [1,10,3,10,2]
+# m = 3
+# k = 1
+# # Output: 3
 
-if len(bloomDay)>=(m*k):
+# if len(bloomDay)>=(m*k):
     
-    for day in range(min(bloomDay),max(bloomDay)+1):
-        count=0
-        done=0
-        for i in bloomDay:
-            if i<=day:
-                count+=1
-            else:
-                done+=count//k
-                count=0
-        done+=count//k
+#     for day in range(min(bloomDay),max(bloomDay)+1):
+#         count=0
+#         done=0
+#         for i in bloomDay:
+#             if i<=day:
+#                 count+=1
+#             else:
+#                 done+=count//k
+#                 count=0
+#         done+=count//k
 
-        if done>=m:
-            print(day)
-            break
-else:
-    print(-1)
+#         if done>=m:
+#             print(day)
+#             break
+# else:
+#     print(-1)
+
+
+nums = [7,2,5,10,8]
+k = 2
+# Output: 18
+i=1
+ans=float('inf')
+while i<len(nums):
+    left_sum=sum(nums[:i])
+    right_sum=sum(nums[i:])
+    ans=min(ans,max(left_sum,right_sum))
+    i+=1
+print(ans)
 
 
 
