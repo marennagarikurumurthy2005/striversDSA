@@ -79,18 +79,60 @@
 # else:
 #     print(-1)
 
+# You are given A painters and an array C of N integers where C[i] denotes the length of the ith board. Each painter takes B units of time to paint 1 unit of board. You must assign boards to painters such that:
+# Each painter paints only contiguous segments of boards.
+# No board can be split between painters.
+# The goal is to minimize the time to paint all boards.
+# Return the minimum time required to paint all boards modulo 10000003.
+# Example 1
+A = 2
+B = 5
+C = [1, 10]
+# Output: 50
 
-nums = [7,2,5,10,8]
-k = 2
+def cal(arr,mid):
+    p=1
+    c=0
+    for i in arr:
+        if c+i<=mid:
+            c+=i
+        else:
+            p+=1
+            c=i
+    return p
+
+
+low=max(C)
+high=sum(C)
+while low<=high:
+    mid=(low+high)//2
+    res=cal(C,mid)
+    if res>=A:
+        high=mid-1
+    else:
+        low=mid+1
+modulo = 10000003
+print((low*B)%modulo)
+
+
+
+
+
+
+
+# nums = [7,2,5,10,8]
+# k = 2
 # Output: 18
-i=1
-ans=float('inf')
-while i<len(nums):
-    left_sum=sum(nums[:i])
-    right_sum=sum(nums[i:])
-    ans=min(ans,max(left_sum,right_sum))
-    i+=1
-print(ans)
+# i=1
+# ans=float('inf')
+# while i<len(nums):
+#     left_sum=sum(nums[:i])
+#     right_sum=sum(nums[i:])
+#     ans=min(ans,max(left_sum,right_sum))
+#     i+=1
+# print(ans)\
+
+
 
 
 
