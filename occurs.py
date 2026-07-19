@@ -33,24 +33,53 @@
 #     num//=10
 # print(num)
 
-import math
-piles =[3,6,7,11]
-h =8
+# import math
+# piles =[3,6,7,11]
+# h =8
 
-def hours_take(piles,mid):
-    count=0
-    for i in piles:
-        count+=math.ceil(i/mid)
-    return count
+# def hours_take(piles,mid):
+#     count=0
+#     for i in piles:
+#         count+=math.ceil(i/mid)
+#     return count
 
-low=1
-high=max(piles)
-ans=float('inf')
-while low<=high:
-    mid=(low+high)//2
-    hours_taken=hours_take(piles,mid)
-    if hours_taken<=h:
-        high=mid-1
-    else:
-        low=mid+1
-print(low)
+# low=1
+# high=max(piles)
+# ans=float('inf')
+# while low<=high:
+#     mid=(low+high)//2
+#     hours_taken=hours_take(piles,mid)
+#     if hours_taken<=h:
+#         high=mid-1
+#     else:
+#         low=mid+1
+# print(low)
+
+bloomDay = [1,10,3,10,2]
+m = 3
+k = 1
+# Output: 3
+
+if len(bloomDay)>=(m*k):
+    
+    for day in range(min(bloomDay),max(bloomDay)+1):
+        count=0
+        done=0
+        for i in bloomDay:
+            if i<=day:
+                count+=1
+            else:
+                done+=count//k
+                count=0
+        done+=count//k
+
+        if done>=m:
+            print(day)
+            break
+else:
+    print(-1)
+
+
+
+
+    
