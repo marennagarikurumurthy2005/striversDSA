@@ -115,6 +115,48 @@ modulo = 10000003
 print((low*B)%modulo)
 
 
+nums1 = [1,3,4,6]
+nums2 = [2,5]
+# Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+# The overall run time complexity should be O(log (m+n)).
+# Output: 2.00000
+
+new_arr=[]
+i=0
+j=0
+while i<len(nums1) and j<len(nums2):
+    if nums1[i]<nums2[j]:
+        new_arr.append(nums1[i])
+        i+=1
+    elif nums1[i]==nums2[j]:
+        new_arr.append(nums1[i])
+        i+=1
+        j+=1
+    else:
+        new_arr.append(nums2[j])
+        j+=1
+while i<len(nums1):
+    new_arr.append(nums1[i])
+    i+=1
+while j<len(nums2):
+    new_arr.append(nums2[j])
+    j+=1
+print(new_arr)
+
+l=len(new_arr)
+mid=l//2
+if l%2==0:
+    
+    print((new_arr[mid]+new_arr[mid-1])/2)
+else:
+    print(new_arr[mid+1])
+    
+
+
+
+
+
+
 
 
 
