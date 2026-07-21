@@ -199,18 +199,46 @@
 #     i+=1
 # print(ans)\
 
-mat = [ [1, 1, 1], [0, 0, 1], [0, 0, 0] ]
-ans=0
-prev_maxi=0
-for i in range(len(mat)):
-    count=0
-    for j in mat[i]:
-        if j==1:
-            count+=1
-    if count>prev_maxi:
-        prev_maxi=count
-        ans=i
-print(ans)
+# mat = [ [1, 1, 1], [0, 0, 1], [0, 0, 0] ]
+# ans=0
+# prev_maxi=0
+# for i in range(len(mat)):
+#     count=0
+#     for j in mat[i]:
+#         if j==1:
+#             count+=1
+#     if count>prev_maxi:
+#         prev_maxi=count
+#         ans=i
+# print(ans)
+
+
+matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
+target = 3
+m=len(matrix)
+n=len(matrix[0])
+low=0
+high=(m*n)-1
+
+while low<=high:
+    mid=(low+high)//2
+    i=mid//n
+    j=mid%n
+    print(f"i={i} , j={j}")
+    
+    if matrix[i][j]==target:
+        print(True)
+        break
+    
+    if matrix[i][j]>target:
+        high=mid-1
+    else:
+        low=mid+1
+else:
+    print(False)
+
+
+# Output: true
     
 
 
