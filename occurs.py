@@ -85,71 +85,71 @@
 # The goal is to minimize the time to paint all boards.
 # Return the minimum time required to paint all boards modulo 10000003.
 # Example 1
-A = 2
-B = 5
-C = [1, 10]
+# A = 2
+# B = 5
+# C = [1, 10]
 # Output: 50
 
-def cal(arr,mid):
-    p=1
-    c=0
-    for i in arr:
-        if c+i<=mid:
-            c+=i
-        else:
-            p+=1
-            c=i
-    return p
+# def cal(arr,mid):
+#     p=1
+#     c=0
+#     for i in arr:
+#         if c+i<=mid:
+#             c+=i
+#         else:
+#             p+=1
+#             c=i
+#     return p
 
 
-low=max(C)
-high=sum(C)
-while low<=high:
-    mid=(low+high)//2
-    res=cal(C,mid)
-    if res>=A:
-        high=mid-1
-    else:
-        low=mid+1
-modulo = 10000003
-print((low*B)%modulo)
+# low=max(C)
+# high=sum(C)
+# while low<=high:
+#     mid=(low+high)//2
+#     res=cal(C,mid)
+#     if res>=A:
+#         high=mid-1
+#     else:
+#         low=mid+1
+# modulo = 10000003
+# print((low*B)%modulo)
 
 
-nums1 = [1,3,4,6]
-nums2 = [2,5]
-# Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
-# The overall run time complexity should be O(log (m+n)).
-# Output: 2.00000
+# nums1 = [1,3,4,6]
+# nums2 = [2,5]
+# # Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+# # The overall run time complexity should be O(log (m+n)).
+# # Output: 2.00000
 
-new_arr=[]
-i=0
-j=0
-while i<len(nums1) and j<len(nums2):
-    if nums1[i]<nums2[j]:
-        new_arr.append(nums1[i])
-        i+=1
-    elif nums1[i]==nums2[j]:
-        new_arr.append(nums1[i])
-        i+=1
-        j+=1
-    else:
-        new_arr.append(nums2[j])
-        j+=1
-while i<len(nums1):
-    new_arr.append(nums1[i])
-    i+=1
-while j<len(nums2):
-    new_arr.append(nums2[j])
-    j+=1
-print(new_arr)
+# new_arr=[]
+# i=0
+# j=0
+# while i<len(nums1) and j<len(nums2):
+#     if nums1[i]<nums2[j]:
+#         new_arr.append(nums1[i])
+#         i+=1
+#     elif nums1[i]==nums2[j]:
+#         new_arr.append(nums1[i])
+#         i+=1
+#         j+=1
+#     else:
+#         new_arr.append(nums2[j])
+#         j+=1
+# while i<len(nums1):
+#     new_arr.append(nums1[i])
+#     i+=1
+# while j<len(nums2):
+#     new_arr.append(nums2[j])
+#     j+=1
+# print(new_arr)
 
-l=len(new_arr)
-mid=l//2
-if l%2==0:
+# l=len(new_arr)
+# mid=l//2
+# if l%2==0:
     
-    print((new_arr[mid]+new_arr[mid-1])/2)
-else:
-    print(new_arr[mid+1])
+#     print((new_arr[mid]+new_arr[mid-1])/2)
+# else:
+#     print(new_arr[mid+1])
     
 
 
@@ -199,7 +199,22 @@ else:
 #     i+=1
 # print(ans)\
 
+mat = [ [1, 1, 1], [0, 0, 1], [0, 0, 0] ]
+ans=0
+prev_maxi=0
+for i in range(len(mat)):
+    count=0
+    for j in mat[i]:
+        if j==1:
+            count+=1
+    if count>prev_maxi:
+        prev_maxi=count
+        ans=i
+print(ans)
+    
 
+
+# Output: 0
 
 
 
