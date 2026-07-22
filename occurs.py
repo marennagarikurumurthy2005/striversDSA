@@ -213,29 +213,29 @@
 # print(ans)
 
 
-matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
-target = 3
-m=len(matrix)
-n=len(matrix[0])
-low=0
-high=(m*n)-1
+# matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
+# target = 3
+# m=len(matrix)
+# n=len(matrix[0])
+# low=0
+# high=(m*n)-1
 
-while low<=high:
-    mid=(low+high)//2
-    i=mid//n
-    j=mid%n
-    print(f"i={i} , j={j}")
+# while low<=high:
+#     mid=(low+high)//2
+#     i=mid//n
+#     j=mid%n
+#     print(f"i={i} , j={j}")
     
-    if matrix[i][j]==target:
-        print(True)
-        break
+#     if matrix[i][j]==target:
+#         print(True)
+#         break
     
-    if matrix[i][j]>target:
-        high=mid-1
-    else:
-        low=mid+1
-else:
-    print(False)
+#     if matrix[i][j]>target:
+#         high=mid-1
+#     else:
+#         low=mid+1
+# else:
+#     print(False)
 
 
 # Output: true
@@ -243,6 +243,61 @@ else:
 
 
 # Output: 0
+
+
+
+matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]]
+target = 5
+# Output: true
+
+rows=len(matrix)
+cols=len(matrix[0])
+
+r=0
+c=cols-1
+while r<rows and c>=0:
+    if matrix[r][c]==target:
+        print(True)
+        break
+    elif matrix[r][c]>target:
+        c-=1
+    else:
+        r+=1
+else:
+    print(False)
+
+
+
+# low=0
+# high=len(matrix)-1
+# while low<=high:
+#     mid=(low+high)//2
+#     i=0
+#     j=len(matrix[mid])-1
+#     if matrix[mid][i] <= target <=matrix[mid][j]:
+#         while i<=j:
+#             inn=(i+j)//2
+#             if matrix[mid][inn]==target:
+#                 print(True)
+#                 exit()
+#             if matrix[mid][inn]<target:
+#                 i=inn+1
+#             else:
+#                 j=inn-1
+#         else:
+#             low=mid+1
+#     elif target<matrix[mid][i]:
+#         high=mid-1
+#     elif target>matrix[mid][j]:
+#         low=mid+1
+#     else:
+#         print('not found')
+#         break
+
+
+    
+            
+
 
 
 
