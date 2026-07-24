@@ -75,20 +75,73 @@
 #  1  3  -1  -3 [5  3  6] 7       6
 #  1  3  -1  -3  5 [3  6  7]      7
 
-from collections import deque
-nums =[1,3,-1,-3,5,3,6,7]
-k =3
-ans=[]
-dq=deque()
-for i in range(len(nums)):
-    while dq and dq[0]<=i-k:
-        dq.popleft()
-    while dq and nums[dq[-1]]<nums[i]:
-        dq.pop()
-    dq.append(i)
-    if i>=k-1:
-        ans.append(nums[dq[0]])
-print(ans)
+# from collections import deque
+# nums =[1,3,-1,-3,5,3,6,7]
+# k =3
+# ans=[]
+# dq=deque()
+# for i in range(len(nums)):
+#     while dq and dq[0]<=i-k:
+#         dq.popleft()
+#     while dq and nums[dq[-1]]<nums[i]:
+#         dq.pop()
+#     dq.append(i)
+#     if i>=k-1:
+#         ans.append(nums[dq[0]])
+# print(ans)
+
+
+
+# arr= [1, 3, 4, 5, 6]
+# # Output: 1
+# count=0
+# for i in range(len(arr)):
+#     min_index=i
+#     min_element=arr[i]
+#     for j in range(i+1,len(arr)):
+#         if min_element>arr[j]:
+#             min_index=j
+#             min_element=arr[j]
+#     if min_index!=i:
+#         arr[min_index],arr[i]=arr[i],arr[min_index]
+#         count+=1
+# print(count)
+arr= [4, 3, 2, 1]
+sorted_arr=sorted(arr)
+d={}
+for i in range(len(sorted_arr)):
+    d[arr[i]]=i
+# print(d)
+swaps=0
+
+for i in range(len(arr)):
+    if arr[i]==sorted_arr[i]:
+        continue
+    swaps+=1
+    correct_value=sorted_arr[i]
+    correct_value_index=d[correct_value]
+    d[arr[i]]=correct_value_index
+    d[correct_value]=i
+    arr[i],arr[correct_value_index]=arr[correct_value_index],arr[i]
+print(swaps)
+
+
+# pairs=[]
+# for i in range(len(arr)):
+#     pairs.append((arr[i],i))
+# pairs.sort()
+# print(pairs)
+# visited=[False]*len(arr)
+# print(visited)
+# for i in range(len(arr)):
+
+
+
+
+
+
+
+
 
 
     
