@@ -106,24 +106,24 @@
 #         arr[min_index],arr[i]=arr[i],arr[min_index]
 #         count+=1
 # print(count)
-arr= [4, 3, 2, 1]
-sorted_arr=sorted(arr)
-d={}
-for i in range(len(sorted_arr)):
-    d[arr[i]]=i
-# print(d)
-swaps=0
+# arr= [4, 3, 2, 1]
+# sorted_arr=sorted(arr)
+# d={}
+# for i in range(len(sorted_arr)):
+#     d[arr[i]]=i
+# # print(d)
+# swaps=0
 
-for i in range(len(arr)):
-    if arr[i]==sorted_arr[i]:
-        continue
-    swaps+=1
-    correct_value=sorted_arr[i]
-    correct_value_index=d[correct_value]
-    d[arr[i]]=correct_value_index
-    d[correct_value]=i
-    arr[i],arr[correct_value_index]=arr[correct_value_index],arr[i]
-print(swaps)
+# for i in range(len(arr)):
+#     if arr[i]==sorted_arr[i]:
+#         continue
+#     swaps+=1
+#     correct_value=sorted_arr[i]
+#     correct_value_index=d[correct_value]
+#     d[arr[i]]=correct_value_index
+#     d[correct_value]=i
+#     arr[i],arr[correct_value_index]=arr[correct_value_index],arr[i]
+# print(swaps)
 
 
 # pairs=[]
@@ -134,6 +134,8 @@ print(swaps)
 # visited=[False]*len(arr)
 # print(visited)
 # for i in range(len(arr)):
+
+
 
 
 
