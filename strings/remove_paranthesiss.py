@@ -25,3 +25,20 @@
 
 # anagrams
 
+s ="()"
+stack=[]
+for i in s:
+    if i in "({[":
+        stack.append(i)
+    if i in ")}]":
+        if stack[-1]==i:
+            stack.pop()
+        else:
+            print(False)
+            exit()
+            # break
+            
+if len(stack)!=0:
+    print(False)
+else:
+    print(True)

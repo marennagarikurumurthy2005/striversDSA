@@ -99,12 +99,6 @@ class Linked_List:
         else:
             print("Element not found")
 
-        
-
-        
-
-
-    
     def delete_begin(self):
         if self.head is None:
             print("LL is already empty")
@@ -112,6 +106,71 @@ class Linked_List:
         else:
             self.head=self.head.ref
             print("Node deleted successfully")
+    def delete_end(self):
+        if self.head is None:
+            print("LL is already empty")
+            return 
+        elif self.head.ref is None:
+            self.head=None
+            return 
+        else:
+            node=self.head
+            while node.ref.ref is not None:
+                node=node.ref
+            node.ref=None
+            return 
+
+    def delete_ele(self,ele):
+        node=self.head
+        if node is None:
+            print("LL is empty")
+            return
+        if node.data==ele:
+            self.head=node.ref
+        else:
+            while  node.ref is not None and node.ref.data!=ele :
+                node=node.ref
+            if node.ref is None:
+                print("element Not Found")
+                return 
+            else:
+                node.ref=node.ref.ref
+                return 
+
+    def update_ele(self,ele,up):
+        node=self.head
+        while node is not None:
+            if node.data==ele:
+                node.data=up
+                return 
+            node=node.ref
+        else:
+            print("element not found")
+        
+        # while node.data!=ele:
+        #     node=node.ref
+        # if node.data==ele:
+        #     node.data=up
+        # else:
+        #     print("Element not found")
+        #     return 
+
+ll = Linked_List()
+
+ll.add_end(10)
+ll.add_end(20)
+ll.add_end(30)
+ll.print_ll()  
+
+ll.add_begin(5)
+ll.print_ll()
+
+ll.add_position(25, 20)
+ll.print_ll()
+        
+ll.delete_ele(20)
+ll.print_ll()
+
 
 
         
